@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Internship Roadmap | TechBridge</title>
+
+    <meta
+        name="description"
+        content="Explore the 30-Day TechBridge Practical Internship roadmap for Data Analytics and Web Development."
+    >
+
+    
+
+
+    <style>
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: #101828;
+            background: #f7f9fc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: 0 auto;
+        }
+
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid #e7ebf2;
+        }
+
+        .nav-container {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .logo-area img {
+            width: 43px;
+            height: 43px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo-text strong {
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .logo-text small {
+            color: #667085;
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .navbar nav a {
+            position: relative;
+            color: #475467;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 28px 0;
+            transition: color 0.25s ease;
+        }
+
+        .navbar nav a:hover,
+        .navbar nav a.active {
+            color: #1769ff;
+        }
+
+        .navbar nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            width: 0;
+            height: 2px;
+            background: #1769ff;
+            border-radius: 10px;
+            transition: width 0.25s ease;
+        }
+
+        .navbar nav a:hover::after,
+        .navbar nav a.active::after {
+            width: 100%;
+        }
+
+        .nav-btn {
+            background: #1769ff;
+            color: white;
+            padding: 11px 19px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(23, 105, 255, 0.2);
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            position: relative;
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(23, 105, 255, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #ffffff 0%, #f5f8ff 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(23, 105, 255, 0.08);
+            border-radius: 50%;
+            right: -170px;
+            top: -170px;
+            animation: rotateCircle 20s linear infinite;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(23, 105, 255, 0.07);
+            border-radius: 50%;
+            right: 50px;
+            bottom: -180px;
+            animation: floatCircle 7s ease-in-out infinite;
+        }
+
+        @keyframes rotateCircle {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes floatCircle {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+            padding: 90px 0;
+            animation: heroEnter 0.8s ease both;
+        }
+
+        @keyframes heroEnter {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eaf2ff;
+            color: #1769ff;
+            border: 1px solid #d6e5ff;
+            padding: 7px 13px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            margin-bottom: 22px;
+        }
+
+        .eyebrow span {
+            width: 7px;
+            height: 7px;
+            background: #1769ff;
+            border-radius: 50%;
+            animation: pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(42px, 6vw, 74px);
+            line-height: 1.04;
+            letter-spacing: -2.5px;
+            max-width: 780px;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 span {
+            color: #1769ff;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #667085;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .stat {
+            background: white;
+            border: 1px solid #e5eaf1;
+            border-radius: 12px;
+            padding: 15px 20px;
+            min-width: 120px;
+            box-shadow: 0 8px 25px rgba(16, 24, 40, 0.04);
+            animation: statEnter 0.7s ease both;
+        }
+
+        .stat:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .stat:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .stat:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes statEnter {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Manrope", sans-serif;
+            font-size: 23px;
+        }
+
+        .stat span {
+            color: #667085;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+
+        /* ================================
+           TRACK SELECTOR
+        ================================= */
+
+        .track-section {
+            padding: 85px 0 40px;
+            background: white;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 690px;
+            margin: 0 auto 38px;
+        }
+
+        .section-heading .label {
+            color: #1769ff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 13px;
+        }
+
+        .section-heading p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        .track-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .track-btn {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e1e6ee;
+            background: white;
+            border-radius: 17px;
+            padding: 25px;
+            text-align: left;
+            cursor: pointer;
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .track-btn:hover {
+            transform: translateY(-5px);
+            border-color: #a9c7ff;
+            box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
+        }
+
+        .track-btn.active {
+            border-color: #1769ff;
+            background: #f7faff;
+            box-shadow: 0 15px 35px rgba(23, 105, 255, 0.12);
+        }
+
+        .track-btn::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(23, 105, 255, 0.05);
+            border-radius: 50%;
+            right: -35px;
+            top: -35px;
+            transition: transform 0.4s ease;
+        }
+
+        .track-btn:hover::before {
+            transform: scale(1.4);
+        }
+
+        .track-icon {
+            position: relative;
+            z-index: 1;
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1769ff;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .track-btn h3 {
+            position: relative;
+            z-index: 1;
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .track-btn p {
+            position: relative;
+            z-index: 1;
+            color: #667085;
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           CURRENT TRACK
+        ================================= */
+
+        .current-track-box {
+            padding: 35px 0 65px;
+            background: white;
+        }
+
+        .current-track-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 27px 30px;
+            border: 1px solid #e1e7ef;
+            border-radius: 18px;
+            background: #fbfcfe;
+        }
+
+        .current-label {
+            color: #98a2b3;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        #currentTrack {
+            font-family: "Manrope", sans-serif;
+            font-size: 27px;
+            letter-spacing: -0.5px;
+            color: #1769ff;
+            animation: trackChange 0.45s ease;
+        }
+
+        #trackDescription {
+            color: #667085;
+            font-size: 14px;
+            max-width: 560px;
+            margin-top: 4px;
+        }
+
+        .track-badge {
+            flex-shrink: 0;
+            padding: 10px 15px;
+            border-radius: 50px;
+            background: #eaf2ff;
+            color: #1769ff;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        @keyframes trackChange {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ================================
+           ROADMAP
+        ================================= */
+
+        .roadmap-section {
+            position: relative;
+            padding: 90px 0 100px;
+            background: #f7f9fc;
+            overflow: hidden;
+        }
+
+        .roadmap-title {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .roadmap-title h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 4vw, 43px);
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-title p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .roadmap {
+            position: relative;
+            max-width: 930px;
+            margin: 0 auto;
+        }
+
+        /* Vertical roadmap line */
+        .roadmap::before {
+            content: "";
+            position: absolute;
+            left: 32px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                #1769ff,
+                #a9c7ff,
+                #dfe9f8
+            );
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .task-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 25px;
+            opacity: 0;
+            animation: cardEnter 0.6s ease forwards;
+        }
+
+        .task-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .task-card:nth-child(2) {
+            animation-delay: 0.12s;
+        }
+
+        .task-card:nth-child(3) {
+            animation-delay: 0.19s;
+        }
+
+        .task-card:nth-child(4) {
+            animation-delay: 0.26s;
+        }
+
+        .task-card:nth-child(5) {
+            animation-delay: 0.33s;
+        }
+
+        .task-card:nth-child(6) {
+            animation-delay: 0.40s;
+        }
+
+        .task-card:nth-child(7) {
+            animation-delay: 0.47s;
+        }
+
+        .task-card:nth-child(8) {
+            animation-delay: 0.54s;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateX(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .task-number {
+            position: relative;
+            z-index: 2;
+            width: 64px;
+            height: 64px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #1769ff;
+            color: #1769ff;
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(23, 105, 255, 0.13);
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .task-card:hover .task-number {
+            transform: scale(1.1);
+            background: #1769ff;
+            color: white;
+        }
+
+        .task-content {
+            position: relative;
+            background: white;
+            border: 1px solid #e4e8ef;
+            border-radius: 17px;
+            padding: 25px 27px;
+            box-shadow: 0 8px 25px rgba(16, 24, 40, 0.035);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .task-content:hover {
+            transform: translateY(-5px);
+            border-color: #c8dafe;
+            box-shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+        }
+
+        .task-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .task-day {
+            color: #1769ff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+        }
+
+        .difficulty {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .difficulty.beginner {
+            background: #ecfdf3;
+            color: #067647;
+        }
+
+        .difficulty.progressive {
+            background: #fff7e6;
+            color: #b54708;
+        }
+
+        .difficulty.intermediate {
+            background: #f3e8ff;
+            color: #7a2bbd;
+        }
+
+        .task-label {
+            color: #98a2b3;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .task-content h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 21px;
+            line-height: 1.3;
+            margin: 4px 0 9px;
+        }
+
+        .task-content p {
+            color: #667085;
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 720px;
+        }
+
+        .task-arrow {
+            position: absolute;
+            right: 23px;
+            bottom: 20px;
+            color: #b3bcc9;
+            font-size: 19px;
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .task-content:hover .task-arrow {
+            color: #1769ff;
+            transform: translateX(6px);
+        }
+
+
+        /* ================================
+           DIFFICULTY PROGRESSION
+        ================================= */
+
+        .difficulty-section {
+            padding: 95px 0;
+            background: white;
+        }
+
+        .difficulty-grid {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .difficulty-card {
+            border: 1px solid #e4e8ef;
+            border-radius: 17px;
+            padding: 25px;
+            background: #fff;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .difficulty-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(16, 24, 40, 0.07);
+        }
+
+        .difficulty-card .circle {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #f2f4f7;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .difficulty-card h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .difficulty-card p {
+            color: #667085;
+            font-size: 13px;
+        }
+
+
+        /* ================================
+           CTA
+        ================================= */
+
+        .cta-section {
+            padding: 80px 0;
+            background: #f7f9fc;
+        }
+
+        .cta {
+            position: relative;
+            overflow: hidden;
+            background: #101828;
+            border-radius: 24px;
+            padding: 65px 55px;
+            color: white;
+            text-align: center;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            top: -180px;
+            right: -50px;
+            animation: ctaFloat 6s ease-in-out infinite;
+        }
+
+        .cta::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            bottom: -160px;
+            left: -60px;
+        }
+
+        @keyframes ctaFloat {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-15px, 15px);
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(28px, 4vw, 43px);
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 590px;
+            margin: 0 auto 28px;
+            color: #b8c2d1;
+            font-size: 14px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .primary-btn {
+            background: #1769ff;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .primary-btn:hover {
+            box-shadow: 0 12px 28px rgba(23, 105, 255, 0.3);
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #0b1220;
+            color: white;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 45px;
+        }
+
+        .footer-brand p {
+            color: #98a2b3;
+            font-size: 13px;
+            max-width: 340px;
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #98a2b3;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            color: #667085;
+            font-size: 11px;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 950px) {
+
+            .navbar nav {
+                gap: 16px;
+            }
+
+            .navbar nav a {
+                font-size: 12px;
+            }
+
+            .difficulty-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+        }
+
+
+        @media (max-width: 760px) {
+
+            .nav-container {
+                min-height: auto;
+                padding: 13px 0;
+                flex-wrap: wrap;
+            }
+
+            .navbar nav {
+                order: 3;
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 3px;
+                scrollbar-width: none;
+            }
+
+            .navbar nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .navbar nav a {
+                white-space: nowrap;
+                padding: 7px 0;
+            }
+
+            .navbar nav a::after {
+                bottom: 0;
+            }
+
+            .nav-btn {
+                margin-left: auto;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .track-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .current-track-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .roadmap {
+                margin-left: 0;
+            }
+
+            .roadmap::before {
+                left: 25px;
+            }
+
+            .task-card {
+                grid-template-columns: 50px 1fr;
+                gap: 16px;
+            }
+
+            .task-number {
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+
+            .task-content {
+                padding: 21px 18px;
+            }
+
+            .task-content h3 {
+                font-size: 17px;
+            }
+
+            .task-content p {
+                font-size: 13px;
+            }
+
+            .task-arrow {
+                display: none;
+            }
+
+            .cta {
+                padding: 50px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 90%;
+            }
+
+            .logo-area img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .logo-text strong {
+                font-size: 16px;
+            }
+
+            .logo-text small {
+                font-size: 9px;
+            }
+
+            .nav-btn {
+                padding: 9px 13px;
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .stat {
+                min-width: 0;
+                padding: 12px 8px;
+                text-align: center;
+            }
+
+            .stat strong {
+                font-size: 19px;
+            }
+
+            .stat span {
+                font-size: 8px;
+            }
+
+            .track-section,
+            .roadmap-section,
+            .difficulty-section {
+                padding-top: 65px;
+            }
+
+            .roadmap-title {
+                margin-bottom: 45px;
+            }
+
+            .task-card {
+                grid-template-columns: 43px 1fr;
+                gap: 12px;
+            }
+
+            .task-number {
+                width: 43px;
+                height: 43px;
+            }
+
+            .roadmap::before {
+                left: 21px;
+            }
+
+            .task-top {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        /* ================================
+           REDUCED MOTION
+        ================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
+
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo-area">
+
+                <img
+                src="logo.png"
+                alt="TechBridge logo"
+                width="160"
+                height="80"
+                loading="eager"
+            >
+
+
+                <div class="logo-text">
+                    <strong>TechBridge</strong>
+                    <small>Internship</small>
+                </div>
+
+            </a>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="programs.html">
+                    Programs
+                </a>
+
+                <a href="tasks.html">
+                    Internship Tasks
+                </a>
+
+                <a href="p4.html" class="active">
+                    Roadmap
+                </a>
+
+            </nav>
+
+
+            <a
+                href="https://forms.gle/8EbdSy5ttGfLZfjv5"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-btn"
+            >
+                Apply Now
+            </a>
+
+        </div>
+    </header>
+
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span></span>
+                        30-DAY PRACTICAL INTERNSHIP
+                    </div>
+
+
+                    <h1>
+                        Choose your
+                        <span>learning track.</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Follow the TechBridge internship journey from the
+                        fundamentals to practical projects. Choose a track
+                        below to explore all eight tasks and see how your
+                        skills progress throughout the internship.
+                    </p>
+
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <strong>30</strong>
+                            <span>Days</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>08</strong>
+                            <span>Tasks</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>02</strong>
+                            <span>Tracks</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             TRACK SELECTOR
+        ================================= -->
+
+        <section class="track-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="label">
+                        Select a Track
+                    </div>
+
+                    <h2>
+                        Where do you want to grow?
+                    </h2>
+
+                    <p>
+                        Select an internship track to view its complete
+                        eight-task roadmap.
+                    </p>
+
+                </div>
+
+
+                <div class="track-selector">
+
+                    <button
+                        type="button"
+                        class="track-btn active"
+                        id="dataTrackBtn"
+                    >
+
+                        <div class="track-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Data Analytics
+                        </h3>
+
+                        <p>
+                            Work with data, uncover patterns and turn
+                            information into useful insights.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="track-btn"
+                        id="webTrackBtn"
+                    >
+
+                        <div class="track-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Design and build websites and web experiences
+                            using modern development fundamentals.
+                        </p>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             CURRENT TRACK
+        ================================= -->
+
+        <section class="current-track-box">
+
+            <div class="container">
+
+                <div class="current-track-inner">
+
+                    <div>
+
+                        <div class="current-label">
+                            Currently Viewing
+                        </div>
+
+                        <h2 id="currentTrack">
+                            DATA ANALYTICS
+                        </h2>
+
+                        <p id="trackDescription">
+                            Working with data, discovering patterns and
+                            turning information into useful insights.
+                        </p>
+
+                    </div>
+
+
+                    <div class="track-badge">
+                        8 TASKS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             INTERACTIVE ROADMAP
+        ================================= -->
+
+        <section class="roadmap-section">
+
+            <div class="container">
+
+                <div class="roadmap-title">
+
+                    <div class="section-heading">
+
+                        <div class="label">
+                            Internship Journey
+                        </div>
+
+                        <h2>
+                            Your 30-Day Roadmap
+                        </h2>
+
+                        <p>
+                            Each task introduces a new practical skill and
+                            gradually increases in difficulty.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap">
+
+                    <div
+                        class="task-list"
+                        id="taskContainer"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             DIFFICULTY
+        ================================= -->
+
+        <section class="difficulty-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="label">
+                        Skill Progression
+                    </div>
+
+                    <h2>
+                        From beginner to practical
+                    </h2>
+
+                    <p>
+                        The internship is structured to help interns build
+                        confidence through progressive hands-on tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="difficulty-grid">
+
+                    <div class="difficulty-card">
+
+                        <div class="circle">
+                            01
+                        </div>
+
+                        <h3>
+                            Beginner
+                        </h3>
+
+                        <p>
+                            Start with the fundamentals and become
+                            comfortable with the tools and concepts.
+                        </p>
+
+                    </div>
+
+
+                    <div class="difficulty-card">
+
+                        <div class="circle">
+                            02
+                        </div>
+
+                        <h3>
+                            Beginner → Intermediate
+                        </h3>
+
+                        <p>
+                            Apply what you have learned through more
+                            practical and connected tasks.
+                        </p>
+
+                    </div>
+
+
+                    <div class="difficulty-card">
+
+                        <div class="circle">
+                            03
+                        </div>
+
+                        <h3>
+                            Intermediate
+                        </h3>
+
+                        <p>
+                            Complete practical projects that combine
+                            multiple skills and concepts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             CTA
+        ================================= -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta">
+
+                    <div class="cta-content">
+
+                        <h2>
+                            Ready to start your journey?
+                        </h2>
+
+                        <p>
+                            Join the TechBridge 30-Day Practical Internship
+                            and turn what you learn into real-world
+                            experience.
+                        </p>
+
+
+                        <div class="cta-buttons">
+
+                            <a
+                                href="https://forms.gle/8EbdSy5ttGfLZfjv5"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="primary-btn"
+                            >
+                                Apply for Internship
+                            </a>
+
+                            <a
+                                href="programs.html"
+                                class="secondary-btn"
+                            >
+                                Explore Programs
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <div class="logo-area">
+
+                        <img
+                src="logo.png"
+                alt="TechBridge logo"
+                width="160"
+                height="80"
+                loading="eager"
+            >
+
+                        <div class="logo-text">
+
+                            <strong>
+                                TechBridge
+                            </strong>
+
+                           
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Bridging Learning to Real-World Experience through
+                        practical technology training and internship
+                        opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Explore
+                    </h4>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="programs.html">
+                        Programs
+                    </a>
+
+                    <a href="tasks.html">
+                        Internship Tasks
+                    </a>
+
+                    <a href="p4.html">
+                        Roadmap
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Get Started
+                    </h4>
+
+                    <a
+                        href="https://forms.gle/8EbdSy5ttGfLZfjv5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Apply Now
+                    </a>
+
+                    <a
+                        href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp Community
+                    </a>
+
+                    <a href="mailto:techbridgebaselink@gmail.com">
+                        Email Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 TechBridge by Baselink Services Limited.
+                    All rights reserved.
+                </p>
+
+                <p>
+                    Bridging Learning to Real-World Experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        /* =================================
+           TASK DATA
+        ================================= */
+
+        const dataAnalyticsTasks = [
+
+            {
+                number: 1,
+                title: "Data Cleaning Basics",
+                day: 1,
+                description:
+                    "Clean a messy dataset using Google Sheets or Excel. Identify and fix duplicate rows, blank cells, inconsistent formatting, and incorrect data types.",
+                difficulty: "Beginner"
+            },
+
+            {
+                number: 2,
+                title: "Formulas & Pivot Tables",
+                day: 4,
+                description:
+                    "Use spreadsheet formulas and Pivot Tables to answer questions and extract useful insights from a dataset.",
+                difficulty: "Beginner"
+            },
+
+            {
+                number: 3,
+                title: "Data Visualization",
+                day: 8,
+                description:
+                    "Create charts and a simple dashboard that communicate useful insights from a dataset.",
+                difficulty: "Beginner → Intermediate"
+            },
+
+            {
+                number: 4,
+                title: "Introduction to SQL",
+                day: 11,
+                description:
+                    "Practice basic SQL queries and use them to answer real-world questions about data.",
+                difficulty: "Beginner → Intermediate"
+            },
+
+            {
+                number: 5,
+                title: "SQL Joins & Aggregations",
+                day: 15,
+                description:
+                    "Use JOIN, GROUP BY and aggregate functions such as COUNT, SUM and AVG to analyze information across multiple tables.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 6,
+                title: "Lookup Functions & Data Wrangling",
+                day: 19,
+                description:
+                    "Use VLOOKUP or XLOOKUP to combine related datasets and handle data mismatches.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 7,
+                title: "Mini Analysis Project",
+                day: 22,
+                description:
+                    "Complete a small end-to-end analysis involving data cleaning, formulas, Pivot Tables, charts and recommendations.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 8,
+                title: "Capstone Project",
+                day: 26,
+                description:
+                    "Complete a larger project combining spreadsheet analysis and SQL using at least two related tables.",
+                difficulty: "Intermediate"
+            }
+
+        ];
+
+
+        const webDevelopmentTasks = [
+
+            {
+                number: 1,
+                title: "Build the TechBridge Homepage",
+                day: 1,
+                description:
+                    "Create the first version of the TechBridge website using HTML and CSS.",
+                difficulty: "Beginner"
+            },
+
+            {
+                number: 2,
+                title: "Build the TechBridge Programs Experience",
+                day: 4,
+                description:
+                    "Create a Programs experience presenting TechBridge's available learning programs.",
+                difficulty: "Beginner"
+            },
+
+            {
+                number: 3,
+                title: "Build the Internship Tasks Experience",
+                day: 8,
+                description:
+                    "Create an interface that presents the TechBridge internship tasks and helps users understand the internship journey.",
+                difficulty: "Beginner → Intermediate"
+            },
+
+            {
+                number: 4,
+                title: "Build an Interactive Internship Roadmap",
+                day: 11,
+                description:
+                    "Use JavaScript to allow visitors to switch between the Data Analytics and Web Development internship tracks.",
+                difficulty: "Beginner → Intermediate"
+            },
+
+            {
+                number: 5,
+                title: "Build the Intern Registration Experience",
+                day: 15,
+                description:
+                    "Create a professional registration and onboarding interface for TechBridge interns.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 6,
+                title: "Build the Task Submission System",
+                day: 19,
+                description:
+                    "Create an interface through which interns can prepare and submit their task work.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 7,
+                title: "Build the Intern Dashboard",
+                day: 22,
+                description:
+                    "Create a dashboard where an intern can view their profile, progress, tasks and submissions.",
+                difficulty: "Intermediate"
+            },
+
+            {
+                number: 8,
+                title: "Build the Complete TechBridge Internship Platform",
+                day: 26,
+                description:
+                    "Combine the different components created during the internship into a complete TechBridge platform.",
+                difficulty: "Intermediate"
+            }
+
+        ];
+
+
+        /* =================================
+           VARIABLES
+        ================================= */
+
+        let selectedTrack = "data";
+
+
+        /* =================================
+           DOM ELEMENTS
+        ================================= */
+
+        const taskContainer =
+            document.getElementById("taskContainer");
+
+        const currentTrack =
+            document.getElementById("currentTrack");
+
+        const trackDescription =
+            document.getElementById("trackDescription");
+
+        const dataTrackBtn =
+            document.getElementById("dataTrackBtn");
+
+        const webTrackBtn =
+            document.getElementById("webTrackBtn");
+
+
+        /* =================================
+           DISPLAY TASKS
+        ================================= */
+
+        function displayTasks() {
+
+            let tasks;
+
+            /*
+                Conditional logic:
+                choose the correct array based
+                on the selected track.
+            */
+
+            if (selectedTrack === "data") {
+
+                tasks = dataAnalyticsTasks;
+
+            } else {
+
+                tasks = webDevelopmentTasks;
+
+            }
+
+
+            /*
+                Clear the old task cards
+                before displaying the new ones.
+            */
+
+            taskContainer.innerHTML = "";
+
+
+            /*
+                Loop through all eight tasks.
+            */
+
+            tasks.forEach(function (task) {
+
+                const taskCard =
+                    document.createElement("article");
+
+                taskCard.className = "task-card";
+
+
+                /*
+                    Decide which CSS class
+                    the difficulty badge receives.
+                */
+
+                let difficultyClass = "beginner";
+
+                if (task.difficulty === "Intermediate") {
+
+                    difficultyClass = "intermediate";
+
+                } else if (
+                    task.difficulty === "Beginner → Intermediate"
+                ) {
+
+                    difficultyClass = "progressive";
+
+                }
+
+
+                /*
+                    Create the task card.
+                */
+
+                taskCard.innerHTML = `
+
+                    <div class="task-number">
+                        ${String(task.number).padStart(2, "0")}
+                    </div>
+
+                    <div class="task-content">
+
+                        <div class="task-top">
+
+                            <span class="task-day">
+                                DAY ${String(task.day).padStart(2, "0")}
+                            </span>
+
+                            <span class="difficulty ${difficultyClass}">
+                                ${task.difficulty}
+                            </span>
+
+                        </div>
+
+                        <div class="task-label">
+                            TASK ${task.number}
+                        </div>
+
+                        <h3>
+                            ${task.title}
+                        </h3>
+
+                        <p>
+                            ${task.description}
+                        </p>
+
+                        <div class="task-arrow">
+                            →
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                /*
+                    Add the card to the page.
+                */
+
+                taskContainer.appendChild(taskCard);
+
+            });
+
+        }
+
+
+        /* =================================
+           UPDATE SELECTED TRACK
+        ================================= */
+
+        function updateTrack() {
+
+            /*
+                Add a temporary animation state.
+            */
+
+            taskContainer.style.opacity = "0";
+            taskContainer.style.transform =
+                "translateY(12px)";
+
+
+            setTimeout(function () {
+
+                if (selectedTrack === "data") {
+
+                    currentTrack.textContent =
+                        "DATA ANALYTICS";
+
+                    trackDescription.textContent =
+                        "Working with data, discovering patterns and turning information into useful insights.";
+
+                    dataTrackBtn.classList.add("active");
+
+                    webTrackBtn.classList.remove("active");
+
+                } else {
+
+                    currentTrack.textContent =
+                        "WEB DEVELOPMENT";
+
+                    trackDescription.textContent =
+                        "Designing and building websites and web experiences using modern development fundamentals.";
+
+                    webTrackBtn.classList.add("active");
+
+                    dataTrackBtn.classList.remove("active");
+
+                }
+
+
+                /*
+                    Render the new task list.
+                */
+
+                displayTasks();
+
+
+                /*
+                    Bring the new cards back.
+                */
+
+                requestAnimationFrame(function () {
+
+                    taskContainer.style.opacity = "1";
+
+                    taskContainer.style.transform =
+                        "translateY(0)";
+
+                });
+
+            }, 180);
+
+        }
+
+
+        /* =================================
+           EVENT LISTENERS
+        ================================= */
+
+        dataTrackBtn.addEventListener(
+            "click",
+            function () {
+
+                selectedTrack = "data";
+
+                updateTrack();
+
+            }
+        );
+
+
+        webTrackBtn.addEventListener(
+            "click",
+            function () {
+
+                selectedTrack = "web";
+
+                updateTrack();
+
+            }
+        );
+
+
+        /* =================================
+           INITIAL PAGE LOAD
+        ================================= */
+
+        displayTasks();
+
+    </script>
+
+</body>
+</html>

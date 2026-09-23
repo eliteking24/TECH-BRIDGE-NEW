@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intern Dashboard | TechBridge</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="brand">
+                 <img
+                src="logo.png"
+                alt="TechBridge logo"
+                width="160"
+                height="80"
+                loading="eager"
+            >
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="programs.html">Programs</a>
+                <a href="tasks.html">Internship Tasks</a>
+                <a href="p4.html">Task Tracker</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+            </nav>
+
+            <a
+                href="https://forms.gle/8EbdSy5ttGfLZfjv5"
+                target="_blank"
+                class="nav-apply"
+            >
+                Apply Now
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             WELCOME SECTION
+        ========================== -->
+
+        <section class="dashboard-hero">
+
+            <div class="hero-glow"></div>
+
+            <div class="container">
+
+                <div class="welcome-grid">
+
+                    <div class="welcome-content">
+
+                        <span class="eyebrow">
+                            INTERN DASHBOARD
+                        </span>
+
+                        <h1>
+                            Welcome back,
+                            <span>Alex.</span>
+                        </h1>
+
+                        <p class="welcome-text">
+                            Keep building, keep learning and keep moving
+                            forward through your TechBridge internship journey.
+                        </p>
+
+                        <div class="intern-meta">
+
+                            <div class="meta-item">
+                                <span>TRACK</span>
+                                <strong>Web Development</strong>
+                            </div>
+
+                            <div class="meta-item">
+                                <span>STATUS</span>
+                                <strong class="status-live">
+                                    <i></i>
+                                    Internship In Progress
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="welcome-card">
+
+                        <div class="profile-icon">
+                            A
+                        </div>
+
+                        <div>
+                            <span>Current Track</span>
+                            <h3>Web Development</h3>
+                        </div>
+
+                        <div class="card-divider"></div>
+
+                        <div class="mini-status">
+                            <span>30-Day Internship</span>
+                            <strong>Day 19</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESS SECTION
+        ========================== -->
+
+        <section class="progress-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            YOUR JOURNEY
+                        </span>
+
+                        <h2>Internship Progress</h2>
+                    </div>
+
+                    <span class="progress-status">
+                        In Progress
+                    </span>
+
+                </div>
+
+
+                <div class="progress-layout">
+
+                    <div class="progress-main">
+
+                        <div class="progress-top">
+
+                            <div>
+                                <span>Overall Progress</span>
+
+                                <h3>
+                                    <span id="completedCount">0</span>
+                                    /
+                                    <span id="totalCount">8</span>
+                                    Tasks Completed
+                                </h3>
+                            </div>
+
+                            <strong id="progressPercentage">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressFill"
+                            ></div>
+
+                        </div>
+
+                        <div class="progress-bottom">
+
+                            <span>
+                                <strong id="remainingCount">8</strong>
+                                Tasks Remaining
+                            </span>
+
+                            <span>
+                                30-Day Internship
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-stat-card">
+
+                        <span>Current Task</span>
+
+                        <strong id="currentTaskNumber">
+                            Task 1
+                        </strong>
+
+                        <p id="currentTaskTitle">
+                            Build TechBridge Homepage
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TASK TRACKER
+        ========================== -->
+
+        <section class="tasks-section">
+
+            <div class="container">
+
+                <div class="section-heading task-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            INTERNSHIP ROADMAP
+                        </span>
+
+                        <h2>Your Tasks</h2>
+
+                        <p>
+                            Track your progress through all eight
+                            internship tasks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="task-filters">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="in-progress"
+                    >
+                        In Progress
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="not-started"
+                    >
+                        Not Started
+                    </button>
+
+                </div>
+
+
+                <!-- DYNAMIC TASKS -->
+
+                <div
+                    class="tasks-grid"
+                    id="tasksContainer"
+                ></div>
+
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+                    <div>⌕</div>
+                    <h3>No tasks found</h3>
+                    <p>
+                        There are no tasks matching this filter.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CHALLENGE HUB
+        ========================== -->
+
+        <section class="challenge-section">
+
+            <div class="container">
+
+                <div class="challenge-card">
+
+                    <div class="challenge-content">
+
+                        <span class="section-label">
+                            KEEP EXPLORING
+                        </span>
+
+                        <h2>
+                            Ready for a challenge?
+                        </h2>
+
+                        <p>
+                            Put your skills to the test with the
+                            TechBridge Challenge Hub and explore
+                            practical challenges beyond your internship tasks.
+                        </p>
+
+                        <a
+                            href="tasks.html"
+                            class="primary-btn"
+                        >
+                            Explore Challenges
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="challenge-visual">
+
+                        <div class="challenge-orbit orbit-one"></div>
+                        <div class="challenge-orbit orbit-two"></div>
+
+                        <div class="challenge-center">
+                            <strong>06</strong>
+                            <span>Challenges</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TECHNOLOGY EXPLORER
+        ========================== -->
+
+        <section class="technology-section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">
+                        EXPLORE & LEARN
+                    </span>
+
+                    <h2>
+                        Modern Web Technologies
+                    </h2>
+
+                    <p>
+                        Explore technologies used to build modern
+                        web applications and complete platforms.
+                    </p>
+
+                </div>
+
+
+                <div class="technology-layout">
+
+                    <!-- TECHNOLOGY BUTTONS -->
+
+                    <div class="technology-tabs">
+
+                        <button
+                            class="technology-btn active"
+                            data-tech="next"
+                        >
+                            <span class="tech-icon">N</span>
+                            Next.js
+                        </button>
+
+                        <button
+                            class="technology-btn"
+                            data-tech="vue"
+                        >
+                            <span class="tech-icon">V</span>
+                            Vue.js
+                        </button>
+
+                        <button
+                            class="technology-btn"
+                            data-tech="angular"
+                        >
+                            <span class="tech-icon">A</span>
+                            Angular
+                        </button>
+
+                        <button
+                            class="technology-btn"
+                            data-tech="backend"
+                        >
+                            <span class="tech-icon">B</span>
+                            Backend
+                        </button>
+
+                    </div>
+
+
+                    <!-- TECHNOLOGY CONTENT -->
+
+                    <div class="technology-display">
+
+                        <span
+                            class="technology-category"
+                            id="technologyCategory"
+                        >
+                            FRONTEND FRAMEWORK
+                        </span>
+
+                        <h3 id="technologyTitle">
+                            Next.js
+                        </h3>
+
+                        <p id="technologyDescription">
+                            Next.js is a React framework used to build
+                            modern web applications. It provides features
+                            such as routing, server-side rendering and
+                            optimized application development.
+                        </p>
+
+
+                        <div
+                            class="technology-details"
+                            id="technologyDetails"
+                        >
+                            <div>
+                                <span>COMMON USE</span>
+                                <strong>
+                                    Modern Web Applications
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>BUILT WITH</span>
+                                <strong>
+                                    React + JavaScript
+                                </strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BACKEND EXPLAINER
+        ========================== -->
+
+        <section class="backend-section">
+
+            <div class="container">
+
+                <div class="backend-content">
+
+                    <span class="section-label">
+                        UNDERSTAND THE FULL STACK
+                    </span>
+
+                    <h2>
+                        What is Backend Development?
+                    </h2>
+
+                    <p>
+                        Backend development focuses on the server-side
+                        of a web application. It handles things such as
+                        databases, authentication, business logic and
+                        communication between the frontend and server.
+                    </p>
+
+                </div>
+
+
+                <div class="backend-grid">
+
+                    <div class="backend-tech">
+                        <span>01</span>
+                        <h3>Node.js</h3>
+                        <p>
+                            JavaScript runtime used to build
+                            server-side applications and APIs.
+                        </p>
+                    </div>
+
+                    <div class="backend-tech">
+                        <span>02</span>
+                        <h3>Express.js</h3>
+                        <p>
+                            Lightweight Node.js framework commonly
+                            used for APIs and web servers.
+                        </p>
+                    </div>
+
+                    <div class="backend-tech">
+                        <span>03</span>
+                        <h3>Django</h3>
+                        <p>
+                            Python web framework designed for building
+                            secure and scalable web applications.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="dashboard-cta">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div>
+                        <span class="section-label">
+                            KEEP BUILDING
+                        </span>
+
+                        <h2>
+                            Your next milestone is waiting.
+                        </h2>
+
+                        <p>
+                            Complete your current task and continue
+                            building real-world experience.
+                        </p>
+                    </div>
+
+                    <a
+                        href="p4.html"
+                        class="primary-btn"
+                    >
+                        View Task Roadmap
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                 <img
+                src="logo.png"
+                alt="TechBridge logo"
+                width="160"
+                height="80"
+                loading="eager"
+            >
+
+                <p>
+                    Bridging Learning to Real-World Experience.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="index.html">Home</a>
+                <a href="programs.html">Programs</a>
+                <a href="tasks.html">Challenge Hub</a>
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Connect</h4>
+
+                <a
+                    href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS"
+                    target="_blank"
+                >
+                    WhatsApp Community
+                </a>
+
+                <a href="mailto:techbridgebaselink@gmail.com">
+                    Email Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 TechBridge by Baselink Services Limited.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- TASK DETAILS MODAL -->
+
+    <div
+        class="modal-overlay"
+        id="taskModal"
+    >
+
+        <div class="task-modal">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <span
+                class="modal-label"
+                id="modalTaskNumber"
+            >
+                TASK 01
+            </span>
+
+            <h2 id="modalTaskTitle">
+                Task Title
+            </h2>
+
+            <p id="modalTaskDescription">
+                Task description.
+            </p>
+
+            <div class="modal-meta">
+
+                <div>
+                    <span>STATUS</span>
+                    <strong id="modalTaskStatus">
+                        Not Started
+                    </strong>
+                </div>
+
+                <div>
+                    <span>DAY</span>
+                    <strong id="modalTaskDay">
+                        Day 1
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

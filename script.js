@@ -377,3 +377,54 @@ webTrackBtn.addEventListener("click", function () {
 ========================================= */
 
 displayTasks();
+
+
+
+/* =========================================
+   MOBILE MENU TOGGLE
+========================================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener("click", () => {
+
+        menuToggle.classList.toggle("active");
+        mainNav.classList.toggle("active");
+
+    });
+
+
+    // Close menu when a navigation link is clicked
+
+    mainNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menuToggle.classList.remove("active");
+            mainNav.classList.remove("active");
+
+        });
+
+    });
+
+
+    // Close menu when clicking outside
+
+    document.addEventListener("click", (event) => {
+
+        if (
+            !mainNav.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+
+            menuToggle.classList.remove("active");
+            mainNav.classList.remove("active");
+
+        }
+
+    });
+
+}

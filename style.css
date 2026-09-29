@@ -4599,3 +4599,324 @@ footer {
     }
 
 }
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 28px;
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111827;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-left: auto;
+}
+
+.main-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #475569;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #1769ff;
+    border-radius: 10px;
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover {
+    color: #1769ff;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* =========================================
+   APPLY BUTTON
+========================================= */
+
+.apply-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+    padding: 0 25px;
+
+    background: #1769ff;
+    color: white;
+
+    border-radius: 13px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.apply-btn:hover {
+    background: #0d5bea;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(23, 105, 255, 0.25);
+}
+
+
+/* =========================================
+   MENU TOGGLE
+========================================= */
+
+.menu-toggle {
+    width: 48px;
+    height: 48px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: #f5f8ff;
+    border-color: #1769ff;
+    transform: translateY(-1px);
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+
+    background: #172033;
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.2s ease,
+        width 0.3s ease;
+}
+
+
+/* =========================================
+   TOGGLE ANIMATION
+========================================= */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        min-height: 76px;
+        padding: 0 20px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo span {
+        font-size: 22px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+
+        top: calc(100% + 1px);
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(18px);
+
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+
+        box-shadow:
+            0 20px 50px rgba(15, 23, 42, 0.12);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(0.98);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .main-nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .main-nav a {
+        padding: 14px 16px;
+        border-radius: 10px;
+    }
+
+    .main-nav a:hover {
+        background: #f5f8ff;
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+    .apply-btn {
+        min-height: 48px;
+        padding: 0 17px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 560px) {
+
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        gap: 9px;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo span {
+        font-size: 20px;
+    }
+
+    .apply-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        width: 45px;
+        height: 45px;
+    }
+}
